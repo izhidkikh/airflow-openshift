@@ -10,7 +10,7 @@ ENV USER=airflow USER_ID=1001
 
 RUN useradd -ms /bin/bash -d ${AIRFLOW_HOME} --uid ${USER_ID} airflow 
 
-RUN pip install --no-cache-dir apache-airflow['crypto','kubernetes','postgres']==${AIRFLOW_VERSION}
+RUN pip install --no-cache-dir apache-airflow[async,postgres,celery,rabbitmq,crypto]==${AIRFLOW_VERSION}
 
 COPY ./scripts/entrypoint.sh /entrypoint.sh
 
