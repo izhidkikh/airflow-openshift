@@ -1,6 +1,6 @@
 FROM python:3.6
 
-ARG AIRFLOW_VERSION=1.10.3
+ARG AIRFLOW_VERSION=1.10.5
 
 ENV AIRFLOW_HOME=/usr/local/airflow
 
