@@ -12,12 +12,12 @@ RUN useradd -ms /bin/bash -d ${AIRFLOW_HOME} --uid ${USER_ID} airflow
 
 RUN pip install --no-cache-dir apache-airflow[async,postgres,celery,rabbitmq,crypto]==${AIRFLOW_VERSION}
 
-#COPY ./scripts/entrypoint.sh /entrypoint.sh
+COPY ./scripts/entrypoint.sh /entrypoint.sh
 
 RUN chown -R airflow: ${AIRFLOW_HOME}
 
 USER ${USER_ID}
 WORKDIR ${AIRFLOW_HOME}
-ENTRYPOINT ["/entrypoint.sh"]
+#ENTRYPOINT ["/entrypoint.sh"]
 
 EXPOSE 8080
