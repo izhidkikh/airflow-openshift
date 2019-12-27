@@ -15,6 +15,7 @@ RUN pip install --no-cache-dir apache-airflow[async,postgres,celery,rabbitmq,cry
 COPY ./scripts/entrypoint.sh /entrypoint.sh
 
 RUN chown -R airflow: ${AIRFLOW_HOME}
+RUN chown airflow: /entrypoint.sh
 
 USER ${USER_ID}
 WORKDIR ${AIRFLOW_HOME}
