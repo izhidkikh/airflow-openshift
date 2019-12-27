@@ -19,6 +19,6 @@ RUN chown airflow: /entrypoint.sh
 
 USER ${USER_ID}
 WORKDIR ${AIRFLOW_HOME}
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["sh", "/entrypoint.sh"]
 
 EXPOSE 8080
