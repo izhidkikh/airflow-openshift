@@ -2,7 +2,7 @@
 
 typeService=$1
 
-if [[ $typeService == "webserver" ]]
+if [[ $typeService == "webserver" ]]; then
 airflow initdb
 fi
 exec airflow ${typeService}
